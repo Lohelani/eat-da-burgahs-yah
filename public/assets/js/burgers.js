@@ -29,7 +29,7 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.change-devoured', (event) => {
+    $(document).on('click', '.change-devoured', function(event) {
         let id = $(this).data('id');
         console.log(id);
         let nowDevoured = $(this).data('nowdevour') === true;
@@ -48,7 +48,7 @@ $(function () {
             location.reload();
         });
     });
-    $('.create-form').on('submit', (event) => {
+    $('.create-form').on('submit', function(event) {
         event.preventDefault();
 
         let newBurger = {
@@ -67,8 +67,13 @@ $(function () {
         });
     });
 
-    $(document).on("click", ".delete-burger", (event) => {
+    $(document).on("click", ".delete-burger", function(event) {
         let id = $(this).data("id");
+        $.ajax('/burgers/' + id, {
+            type: 'DELETE'
+        }).then(function () {
+            location.reload();
+        });
     });
 
 })
