@@ -12,9 +12,9 @@ $(function () {
             let new_elem = '<li>' + burgers[i].id + '. ' + burgers[i].name + "<button class='change-devoured' data-id='" + burgers[i].id + "' data-newDevoured='" + !burgers[i].devoured + "'>";
 
             if (burgers[i].devoured) {
-                new_elem += "Devour Burger";
-            } else {
                 new_elem += "Devoured";
+            } else {
+                new_elem += "Devour Burger";
             }
 
             new_elem += '</button>';
@@ -52,8 +52,7 @@ $(function () {
         event.preventDefault();
 
         let newBurger = {
-            name: $('#bg').val().trim(),
-            devour: $('[name=devour]:checked').val().trim()
+            name: $('#bg').val().trim()
         };
 
         $.ajax('/burgers', {

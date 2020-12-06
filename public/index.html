@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-    <title>Burgers</title>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/assets/js/burgers.js"></script>
-  </head>
-  <body>
-    <h1>Eat Da Burgahs</h1>
 
-    <h2>Add a Burger:</h2>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+  <title>Burgers</title>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/assets/js/burgers.js"></script>
+</head>
 
-    <ul id="addedBurgers"></ul>
+<body>
+  <header>
+    <img class="center" src="burger.png" alt="Cartoon burger" width="150" height="180">
+    <h1>Eat Da Burgs</h1>
+  </header>
 
-    <h2>Burgers Eaten</h2>
+  <!-- 
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+    aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+  </div> -->
 
-    <ul id="eatenBurgers"></ul>
 
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-      <div class="form-group">
-        <label for="bg">Burger Name:</label>
-        <input type="text" id="bg" name="name" />
+
+  <div class="container">
+    <div class="input-group">
+      <div class="row">
+        <div class="col-12">
+          <form class="create-form">
+            <div class="form-group">
+              <label for="bg">Create a Burger:</label>
+              <input type="text" class="form-control" id="bg" name="name" />
+              <div class="input-group-append">
+              <button type="submit" class="btn btn-primary form-control">Add Burger</button></div>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label for="devour">Devour?</label><br />
-        <input type="radio" name="devour" value="1" checked /> Devoured<br />
-        <input type="radio" name="devoured" value="0" /> Not Eaten
+
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Available</h2>
+
+        <ul id="addedBurgers"></ul>
       </div>
+      <div class="col">
+        <h2>Devoured</h2>
 
-      <button type="submit">Add Burger</button>
-    </form>
-  </body>
+        <ul id="eatenBurgers"></ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
