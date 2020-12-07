@@ -6,7 +6,7 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+
 const burger = require("../models/burger.js");
 
 router.get('/', (req, res) => {
@@ -30,8 +30,6 @@ router.post('/burgers', (req,res) => {
 });
 
 router.put('/burgers/:id', (req, res) => {
-    // let condition = 'id = ' + req.params.id;
-    // console.log('condition', condition);
 
     burger.update(req.params.id, (result) => {
         if (result.changedRows == 0) {
