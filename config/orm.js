@@ -28,12 +28,10 @@ function objToSql(ob) {
     var value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      // if string with spaces, add quotations
       if (typeof value === "string") {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(key + "=" + value);
     }
   }
@@ -73,7 +71,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -106,5 +104,5 @@ const orm = {
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm
 module.exports = orm;
